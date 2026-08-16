@@ -360,17 +360,7 @@ Title.Font = Enum.Font.SourceSans
 Title.TextSize = 18
 Title.Text = "Perfection // IY v" .. currentVersion
 
-local function IY_SetFont(fontEnum)
-    for _, inst in ipairs(text1) do
-        pcall(function() inst.Font = fontEnum end)
-    end
-    for _, inst in ipairs(text2) do
-        pcall(function() inst.Font = fontEnum end)
-    end
-end
-getgenv().IY_SetFont = IY_SetFont
 
-IY_SetFont(Enum.Font.PatrickHand)
 
 do
 	local emoji = ({
@@ -13335,7 +13325,17 @@ do
     IndexContents("", true)
 end
 
+local function IY_SetFont(fontEnum)
+    for _, inst in ipairs(text1) do
+        pcall(function() inst.Font = fontEnum end)
+    end
+    for _, inst in ipairs(text2) do
+        pcall(function() inst.Font = fontEnum end)
+    end
+end
+getgenv().IY_SetFont = IY_SetFont
 
+IY_SetFont(Enum.Font.PatrickHand)
 
 IYMouse.Move:Connect(checkTT)
 CaptureService.CaptureBegan:Connect(function()
