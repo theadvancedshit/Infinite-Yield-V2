@@ -1,3 +1,8 @@
+--[[
+	ts modded by
+ the man
+elijah
+]]
 
 if IY_LOADED and not _G.IY_DEBUG then
 	-- error("Infinite Yield is already running!", 0)
